@@ -19,6 +19,10 @@ html {
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    background-image: url("../img/01-trame.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 section {
@@ -75,7 +79,7 @@ section {
 }
 
 .home-img img {
-    width: 22vw;
+    width: 25vw;
     animation: floatImage 3s ease-in-out infinite;
 }
 
@@ -159,11 +163,11 @@ span {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: var(--secondary-bg-color);
+    background-color: var(--secondary-bg-color);
 }
 
 .about-img img {
-    width: 22vw;
+    width: 25vw;
     animation: floatImage 3s ease-in-out infinite;
 }
 
