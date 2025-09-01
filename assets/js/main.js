@@ -2,13 +2,7 @@ window.addEventListener("load",()=> {
     let place=document.querySelector("#year");
     let createdAt=2024;
     let current=(new Date).getFullYear();
-    place.innerHTML=createdAt===current?current:`$ {
-        createdAt
-    }
-    - $ {
-        current
-    }
-    `
+    place.innerHTML=createdAt===current?current:`${createdAt} - ${current}`
 })
 
 let menuIcon=document.querySelector("#menu-icon")
