@@ -201,7 +201,8 @@ span {
         }
 
         button.active {
-            background-color: var(--main-color);
+            border-top: .3rem solid var(--main-color);
+            border-bottom: .3rem solid var(--main-color);
         }
     }
 
