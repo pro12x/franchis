@@ -13,7 +13,7 @@
     box-sizing:border-box;
     text-decoration:none;
     border:none;
-    outline:0;
+    outline: none;
     scroll-behavior:smooth;
     font-family:Poppins,sans-serif
 }
@@ -164,20 +164,62 @@ span {
     box-shadow:none
 }
 
-.about {
+.skills {
     display:flex;
     justify-content:center;
-    align-items:center;
     gap:2rem;
     background-color:var(--secondary-bg-color)
 }
 
-.about-img img {
+.skills-img img {
     width:25vw;
     animation:floatImage 3s ease-in-out infinite
 }
 
-.about-content h2 {
+.skills-content {
+    .tab {
+        overflow: hidden;
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        border: .1rem solid rgba(0, 0, 0, .2);
+        border-radius: 4rem;
+        display: flex;
+        justify-content: space-evenly;
+
+        button {
+            background-color: inherit;
+            border: none;
+            float: left;
+            color: #fff;
+            cursor: pointer;
+            padding: 2rem 3rem;
+            transition: .5s;
+            font-size: 2.3rem;
+        }
+
+        button:hover {
+            background-color: var(--main-color);
+        }
+
+        button.active {
+            background-color: var(--main-color);
+        }
+    }
+
+    .tabcontent {
+        display: none;
+        padding: 2rem 3rem;
+        border-top: none;
+        animation: openTab 1s;
+
+        span {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            font-weight: 600;
+        }
+    }
+}
+
+/* .about-content h2 {
     text-align:left;
     line-height:1.2
 }
@@ -189,6 +231,15 @@ span {
 .about-content p {
     font-size:1.6rem;
     margin:2rem 0 3rem
+} */
+
+@keyframes openTab {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .timeline h2 {
@@ -291,7 +342,7 @@ span {
     text-align:center;
     border:.2rem solid var(--bg-color);
     transition:.5s ease;
-    min-height:290px
+    min-height:200px
 }
 
 .services-container .services-box:hover {
@@ -306,15 +357,22 @@ span {
 }
 
 .services-box h3 {
-    font-size:2.6rem
+    font-size:2.6rem;
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    flex-grow:1
 }
 
 .services-box p {
     font-size:1.6rem;
     margin:1rem 0 3rem;
     display:-webkit-box;
-    -webkit-line-clamp:3;
-    line-clamp:3;
+    -webkit-line-clamp:2;
+    line-clamp:2;
     -webkit-box-orient:vertical;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -550,11 +608,11 @@ span {
         margin-top:4rem
     }
 
-    .about {
+    .skills {
         flex-direction:column-reverse
     }
 
-    .about-img img {
+    .skills-img img {
         width:70vw;
         margin-top:4rem
     }
@@ -613,7 +671,8 @@ span {
         width:90vw
     }
 
-    .about-img img {
+    .skills-img img {
+        display: none;
         width:90vw
     }
 

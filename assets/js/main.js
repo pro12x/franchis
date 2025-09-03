@@ -3,6 +3,8 @@ window.addEventListener("load",()=> {
     let createdAt=2024;
     let current=(new Date).getFullYear();
     place.innerHTML=createdAt===current?current:`${createdAt} - ${current}`
+
+    document.getElementById("defaultOpen").click();
 })
 
 let menuIcon=document.querySelector("#menu-icon")
@@ -26,6 +28,7 @@ window.onscroll=()=> {
             navLinks.forEach(links=> {
                 links.classList.remove("active");
                 document.querySelector("header nav a[href*="+id+"]").classList.add("active")
+                document.title = id[0].toUpperCase() + id.slice(1) + " | Franchis Janel M.";
             })
         }
     })
@@ -59,3 +62,43 @@ ScrollReveal().reveal(".home-content p, .about-content", {
 const typed=new Typed(".multiple-text", {
     strings:["Fullstack Java Developer","Mobile Developer","Web Developer"],typeSpeed:50,backSpeed:100,backDelay:1e3,loop:true
 })
+
+const openTab = (evt, tabName) => {
+    evt.preventDefault();
+
+    console.log('I am here ', tabName)
+
+    let i, tabcontent, tablinks
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.querySelectorAll(".tabcontent")
+    tabcontent.forEach(tab => tab.style.display = "none")
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.querySelectorAll(".tablinks")
+    tablinks.forEach(link => link.classList.remove("active"))
+
+    // Show the current tab, and add an active class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block"
+    document.getElementById(tabName).style.animation = "openTab 0.5s ease"
+    evt.currentTarget.classList.add("active")
+}
+
+// function open(evt, tabName) {
+//     var i, tabcontent, tablinks
+
+    
+
+//     // Get all elements with class="tabcontent" and hide them
+//     tabcontent = document.querySelectorAll(".tabcontent")
+//     tabcontent.forEach(content => content.style.display = "none")
+
+//     // Get all elements with class="tablinks" and remove the class "active"
+//     tablinks = document.querySelectorAll(".tablinks")
+//     tablinks.forEach(link => link.classList.replace(" active", ""))
+
+//     // Show the current tab, and add an active class to the button that opened the tab
+//     document.getElementById(tabName).style.display = "block"
+//     evt.currentTarget.classList.add("active")
+
+// }
